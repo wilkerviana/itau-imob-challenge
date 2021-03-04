@@ -27,9 +27,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/assets/scss/main.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss/_base"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -43,7 +46,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,

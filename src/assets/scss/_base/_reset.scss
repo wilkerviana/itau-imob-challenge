@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  background: transparent;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: #ffffff;
+  font-size: 16px;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrapper {
+  min-height: calc(100vh - 60px);
+  margin: 0 auto;
+  max-width: 280px;
+  width: 100%;
+  @media screen and (min-width: 560px) {
+    width: 90vw;
+    max-width: 900px;
+  }
+  @media screen and (min-width: 960px) {
+    min-height: calc(100vh - 100px);
+    max-width: 1200px;
+    width: 100%;
+  }
+}

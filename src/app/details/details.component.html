@@ -1,0 +1,46 @@
+<div class="details" *ngIf="property$ | async as property">
+  <div class="details__img">
+    <img [src]="property?.image" [alt]="property?.title">
+  </div>
+  <div class="details__content">
+    <div class="wrapper">
+      <div class="details__info">
+        <a [routerLink]="['/']">< Voltar</a>
+        <div class="details__content__header">
+          <h2>{{ property?.address }}, {{ property?.number }}</h2>
+          <p>{{ property?.neighborhood }}, {{ property?.city }}</p>
+          <span>{{ property?.type }}</span>
+        </div>
+        <div class="details__content__rules">
+          <span class="rule" [class.disabled]="!rules?.totalArea">📐 <br>{{ rules?.totalArea }}m²</span>
+          <span class="rule" [class.disabled]="!rules?.acceptPets">🐶 <br>aceita pet</span>
+          <span class="rule" [class.disabled]="!rules?.bedrooms">🛏 <br>{{ rules?.bedrooms }} dormitórios</span>
+          <span class="rule" [class.disabled]="!rules?.bathrooms">🚿 <br>{{ rules?.bathrooms }} banheiros</span>
+          <span class="rule" [class.disabled]="!rules?.floor">🏨 <br>{{ rules?.floor }}º andar</span>
+          <span class="rule" [class.disabled]="!rules?.hasElevator">🏢 <br>possui elevador</span>
+          <span class="rule" [class.disabled]="!rules?.suites" *ngIf="rules?.suites">🛁 <br>{{ rules?.suites}} súites</span>
+          <span class="rule" [class.disabled]="!rules?.parkingSlots">🚘 <br>{{ rules?.parkingSlots }} vaga na garagem</span>
+        </div>
+      </div>
+      <div class="details__deal">
+        <div class="details__deal__container">
+          <h1>{{ property?.title }}</h1>
+          <div *ngIf="property?.forRent" class="details__deal__prices">
+            <span>Aluguel</span>
+            <span>R${{ property?.rentValue }}</span>
+          </div>
+          
+          <div class="details__deal__prices">
+            <span>Condomínio</span>
+            <span>R${{ property?.condominiumValue }}</span>
+          </div>
+  
+          <div class="details__deal__prices">
+            <span>Total</span>
+            <span>R${{ property?.totalCost }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.header-default {
+  background-color: var(--imob-color-orange);
+  height: 80px;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  @media screen and (max-width: 560px) {
+    height: 40px;
+    padding: .5rem;
+    .brand {
+      display: block;
+      max-width: 25px;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

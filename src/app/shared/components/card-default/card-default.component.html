@@ -1,0 +1,16 @@
+<div class="card-default" (click)="getDetails(index)">
+  <div class="card-default__img">
+    <img [src]="data?.image" alt="Image">
+  </div>
+  <div class="card-default__details">
+    <p class="card-default__title">{{ data?.address }}</p>
+    <p class="card-default__subtitle">{{ data?.neighborhood }}, {{ data?.city }}</p>
+    <div class="card-default__itens">
+      <span>{{ data?.totalArea }}m²</span>
+      <span>{{ data?.bedrooms }} {{ data.bedrooms > 1 ? 'dormitórios' : 'dormitório'}}</span>
+    </div>
+    <p class="card-default__price">
+      Valor total R$ {{ data?.totalCost }},00
+    </p>
+  </div>
+</div>

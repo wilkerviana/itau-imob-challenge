@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <h1 class="search-title">Encontre o imóvel dos seus sonhos</h1>
+  <div class="search">
+    <input [formControl]="query" type="text" placeholder="Digite aqui sua pesquisa">
+  </div>
+  <h2 class="title">Imóveis</h2>
+  <div class="cards-grid">
+    <ng-container *ngFor="let property of properties$ | async; let i = index">
+      <imob-card-default [index]="i" [data]="property"></imob-card-default>
+    </ng-container>
+  </div>
+</div>

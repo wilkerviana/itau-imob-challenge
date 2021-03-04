@@ -1,6 +1,8 @@
 # Imob Challenge
-
 Projeto desenvolvido em Angular e manipulação dos dados utilizando operadores da biblioteca RxJs
+
+![imob_challenge](https://user-images.githubusercontent.com/7241422/109936730-f6b1d200-7cac-11eb-8099-2225bb423f42.gif)
+
 ## Descrição
 
 Desafio para vaga de Desenvolvedor Front-end no time de Imob do Itaú.

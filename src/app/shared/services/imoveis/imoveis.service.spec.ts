@@ -62,15 +62,15 @@ describe('ImoveisService', () => {
     req.flush(propertiesMock);
   });
 
-  // it('getPropertyDetails should get item details as expected', () => {
-  //   const [detailsMock] = propertiesMock;
+  it('getPropertyDetails should get item details as expected', () => {
+    const [detailsMock] = propertiesMock;
 
-  //   service.getPropertyDetails(0).subscribe((response) => {
-  //     expect(response).toEqual(detailsMock);
-  //   });
+    service.getPropertyDetails(0).subscribe((response) => {
+      expect(response).toEqual(detailsMock);
+    });
 
-  //   const req = httpMock.expectOne(url);
-  //   expect(req.request.method).toBe('GET');
-  //   req.flush(detailsMock);
-  // });
+    const req = httpMock.expectOne(url);
+    expect(req.request.method).toBe('GET');
+    req.flush(detailsMock);
+  });
 });

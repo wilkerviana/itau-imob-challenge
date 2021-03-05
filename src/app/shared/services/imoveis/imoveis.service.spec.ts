@@ -55,7 +55,7 @@ describe('ImoveisService', () => {
   });
 
   it('getProperties should get list as expected', () => {
-    service.getProperties().subscribe((response) => {
+    service.getProperties('').subscribe((response) => {
       expect(response).toEqual(propertiesMock);
     });
 
@@ -64,7 +64,7 @@ describe('ImoveisService', () => {
     req.flush(propertiesMock);
   });
 
-  it('getPropertyDetails should get item details as expected', () => {
+  it('getProperties should get item details as expected', () => {
     const [detailsMock] = propertiesMock;
 
     service.getPropertyDetails(0).subscribe((response) => {

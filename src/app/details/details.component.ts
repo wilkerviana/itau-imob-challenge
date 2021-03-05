@@ -31,6 +31,10 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.setPropertyDetails();
+  }
+
+  private setPropertyDetails(): void {
     const idProperty = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.property$ = this.imoveisService.getPropertyDetails(idProperty).pipe(
       tap((res: Properties) => {

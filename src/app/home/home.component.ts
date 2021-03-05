@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
   constructor(private imoveisService: ImoveisService) {}
 
   ngOnInit(): void {
+    this.loadProperties();
+  }
+
+  loadProperties(): void {
     this.properties$ = this.query.valueChanges.pipe(
       startWith(''),
       map((query: string) => query.trim()),

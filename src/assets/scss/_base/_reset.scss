@@ -32,11 +32,11 @@ button {
   width: 100%;
   @media screen and (min-width: 560px) {
     width: 90vw;
-    max-width: 900px;
+    max-width: 600px;
   }
-  @media screen and (min-width: 960px) {
+  @media screen and (min-width: 1080px) {
     min-height: calc(100vh - 100px);
-    max-width: 1200px;
+    max-width: 960px;
     width: 100%;
   }
 }

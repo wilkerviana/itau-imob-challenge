@@ -4,9 +4,17 @@
     <input class="input-query" [formControl]="query" type="text" placeholder="Digite aqui sua pesquisa">
   </div>
   <h2 class="title">Imóveis</h2>
-  <div class="cards-grid">
-    <ng-container *ngFor="let property of properties$ | async; let i = index">
-      <imob-card-default [index]="i" [data]="property"></imob-card-default>
+  <div class="cards-grid" *ngIf="properties$ | async as properties; else loading">
+    <ng-container *ngIf="properties?.length else emptyProperties">
+      <ng-container *ngFor="let property of properties">
+        <imob-card-default [data]="property"></imob-card-default>
+      </ng-container>
     </ng-container>
   </div>
 </div>
+<ng-template #loading>
+  <span class="spinner"></span>
+</ng-template>
+<ng-template #emptyProperties>
+  <p>Nenhum resultado encontrado</p>
+</ng-template>

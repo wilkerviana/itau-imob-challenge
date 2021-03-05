@@ -7,6 +7,7 @@ import {
   map,
   startWith,
   switchMap,
+  tap,
 } from 'rxjs/operators';
 import { Properties } from '../shared/interfaces/property.interface';
 import { ImoveisService } from '../shared/services/imoveis/imoveis.service';
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit {
       map((query: string) => query.trim()),
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap((query) => this.imoveisService.getFilteredProperties(query))
+      switchMap((query) => this.imoveisService.getProperties(query))
     );
   }
 }

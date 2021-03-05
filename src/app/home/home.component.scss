@@ -5,6 +5,10 @@
   grid-gap: 1.25rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding: .5rem;
+  p {
+    color: var(--imob-color-darkgray);
+    margin-top: 1rem;
+  }
 }
 
 .title {
@@ -13,12 +17,16 @@
 }
 .search-title {
   font-size: 2em;
+  margin-top: 2rem;
 }
 
 .title, .search-title {
   color: var(--imob-color-blue);
-  line-height: 2em;
+  line-height: 1.5em;
   text-align: center;
+  @media screen and (min-width: 960px) {
+    line-height: 2em;
+  }
 }
 
 .search {
@@ -41,5 +49,24 @@
     &:focus {
       border: 1px solid rgba(218, 218, 218, 1);
     }
+  }
+}
+
+
+.spinner {
+  border: 0.4rem solid var(--imob-color-darkgray);
+  border-right-color: rgba(126, 132, 147, 0.05) !important;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: block;
+  margin: 3rem auto;
+
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

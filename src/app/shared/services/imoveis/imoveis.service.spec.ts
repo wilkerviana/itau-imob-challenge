@@ -3,14 +3,16 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { Properties } from '../../interfaces/property.interface';
 import { ImoveisService } from './imoveis.service';
 
 describe('ImoveisService', () => {
   let service: ImoveisService;
   let httpMock: HttpTestingController;
   const url = 'http://localhost:3000/data';
-  const propertiesMock = [
+  const propertiesMock: Properties[] = [
     {
+      id: 0,
       bedrooms: 1,
       parkingSlots: 0,
       bathrooms: 1,

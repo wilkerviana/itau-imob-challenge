@@ -1,4 +1,5 @@
 export interface Properties {
+  id?: number;
   bedrooms: number;
   parkingSlots: number;
   bathrooms: number;

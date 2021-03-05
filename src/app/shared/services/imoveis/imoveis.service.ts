@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Properties } from '../../interfaces/property.interface';
 
 @Injectable({
@@ -12,20 +12,18 @@ export class ImoveisService {
 
   constructor(private http: HttpClient) {}
 
-  getProperties(): Observable<Properties[]> {
-    return this.http.get<Properties[]>(this.url);
-  }
-
-  getFilteredProperties(query: string): Observable<Properties[]> {
+  getProperties(query?: string): Observable<Properties[]> {
     return this.http
       .get<Properties[]>(this.url)
       .pipe(
         map((properties) =>
-          properties.filter(
-            (property) =>
-              property.neighborhood.includes(query) ||
-              property.city.includes(query)
-          )
+          properties
+            .map((p, i) => (p = { ...p, id: i }))
+            .filter(
+              (property) =>
+                property.neighborhood.includes(query) ||
+                property.city.includes(query)
+            )
         )
       );
   }

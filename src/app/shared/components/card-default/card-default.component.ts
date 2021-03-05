@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Properties } from '../../interfaces/property.interface';
 
 @Component({
   selector: 'imob-card-default',
@@ -7,14 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-default.component.scss'],
 })
 export class CardDefaultComponent implements OnInit {
-  @Input() index: number;
-  @Input() data: any;
+  @Input() data: Properties;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   getDetails(id: number) {
-    this.router.navigate(['/imoveis', id]);
+    this.router.navigate(['/imoveis', this.data.id]);
   }
 }

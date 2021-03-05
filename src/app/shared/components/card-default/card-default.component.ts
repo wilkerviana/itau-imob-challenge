@@ -15,6 +15,6 @@ export class CardDefaultComponent implements OnInit {
   ngOnInit(): void {}
 
   getDetails(id: number) {
-    this.router.navigate(['/imoveis', this.data.id]);
+    this.router.navigate(['/imoveis', id]);
   }
 }
